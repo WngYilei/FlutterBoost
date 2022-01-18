@@ -1,0 +1,25 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+
+        maven {
+            url '/Users/wyl/Desktop/FlutterBoostDemo/flutter_module/build/host/outputs/repo'
+        }
+        maven {
+            url "https://storage.googleapis.com/download.flutter.io"
+        }
+    }
+}
+rootProject.name = "BoostTestAndroid"
+include ':app'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_module/.android/include_flutter.groovy'
+))
+include ':flutter_module'
+project(':flutter_module').projectDir = new File('../flutter_module')
