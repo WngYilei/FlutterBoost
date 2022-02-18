@@ -5,12 +5,6 @@ dependencyResolutionManagement {
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
 
-        maven {
-            url '/Users/wyl/Desktop/FlutterBoostDemo/flutter_module/build/host/outputs/repo'
-        }
-        maven {
-            url "https://storage.googleapis.com/download.flutter.io"
-        }
     }
 }
 rootProject.name = "BoostTestAndroid"

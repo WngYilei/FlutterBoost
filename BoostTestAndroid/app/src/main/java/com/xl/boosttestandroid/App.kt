@@ -27,7 +27,7 @@ class App : Application() {
 
             override fun pushFlutterRoute(options: FlutterBoostRouteOptions) {
                 val intent: Intent =
-                    FlutterBoostActivity.CachedEngineIntentBuilder(FlutterBoostActivity::class.java)
+                    FlutterBoostActivity.CachedEngineIntentBuilder(FlutterPage::class.java)
                         .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
                         .destroyEngineWithActivity(false)
                         .uniqueId(options.uniqueId())

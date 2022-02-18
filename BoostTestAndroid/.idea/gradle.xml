@@ -8,6 +8,7 @@
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$USER_HOME$/Documents/gradle/gradle-7.0.2" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$USER_HOME$/.pub-cache/git/flutter_boost-e19bf36cb451e2790edb65d353a643dbd472f8fa/android" />
