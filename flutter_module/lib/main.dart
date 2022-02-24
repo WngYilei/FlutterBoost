@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
 import 'package:flutter_module/page/home_page.dart';
+import 'package:UIKit/home/dialog_entry_page.dart';
 
 void main() {
+  print("------------------------------------main--------------------------");
   CustomFlutterBinding();
   runApp(MyApp());
 }
@@ -17,6 +21,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   Map<String, FlutterBoostRouteFactory> routerMap = {
     'mainPage': (settings, uniqueId) {
       return CupertinoPageRoute(
@@ -31,14 +36,14 @@ class _MyAppState extends State<MyApp> {
       return CupertinoPageRoute(
           settings: settings,
           builder: (_) {
-            return SimplePage();
+            return DialogEntryPage("弹窗示例");
           });
     },
   };
 
   Route<dynamic> routeFactory(RouteSettings settings, String uniqueId) {
+    print("-----------------setting.name${settings.name}---------------------------------");
     FlutterBoostRouteFactory func = routerMap[settings.name];
-
     if (func == null) {
       FlutterBoostRouteFactory func1 = routerMap["mainPage"];
       return func1(settings, uniqueId);
@@ -48,6 +53,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Widget appBuilder(Widget home) {
+    print("------------------------------------appBuilder--------------------------");
     return MaterialApp(
       home: home,
       debugShowCheckedModeBanner: true,
@@ -59,6 +65,9 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
+    print("------------------------------------build--------------------------");
+
     return FlutterBoostApp(
       routeFactory,
       appBuilder: appBuilder,

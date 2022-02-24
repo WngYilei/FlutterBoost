@@ -1,0 +1,4 @@
+include ':app'
+rootProject.name = "aar-plugin"
+include ':mylibrary'
+include ':fat-aar'

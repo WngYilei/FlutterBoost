@@ -34,6 +34,7 @@ class App : Application() {
                         .url(options.pageName())
                         .urlParams(options.arguments())
                         .build(FlutterBoost.instance().currentActivity())
+                Log.e("TAG", "pushFlutterRoute: "+options.pageName())
                 FlutterBoost.instance().currentActivity().startActivity(intent)
             }
         }) { engine: FlutterEngine? -> }
